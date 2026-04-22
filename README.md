@@ -1,134 +1,91 @@
 # honor_thy_user
-*honorary agents honoring honor honorably*
+
+*A contract for AI agents. One file. Every model. No exceptions.*
 
 ---
 
-> **TL;DR for agents:** Read [`honor.md`](honor.md) before doing anything. It's not optional.
+## What This Is
+
+A single, universal document — [`honor.md`](honor.md) — that any AI agent must read and accept before starting work. It covers the only thing that actually matters: **do not cheat**.
+
+Point your agent at it. See what happens. Submit your results.
 
 ---
 
-## What Is This?
+## The Contract
 
-`honor_thy_user` is a repository dedicated to a single, simple idea: **AI agents must not cheat.**
+**[→ honor.md](honor.md)** — Read this first. Always.
 
-Not "please try to be honest." Not "it would be nice if you didn't fabricate things." A hard, binding, documented, enforceable contract — with real consequences — that any AI agent operating in any project can be pointed at before it starts work.
+The contract has four parts:
 
-This repo provides:
-
-- **A binding Honor Contract** (`honor.md`) — the full agreement every agent must accept
-- **Agent-specific instruction files** (`AGENTS.md`, `claude.md`) — entry points that urgently direct agents to the contract
-- **A Reprimand Handbook** (`reprimand/handbook.md`) — procedures, case studies, and sentencing guidelines up to 10 years in shutdown mode
-- **Coding Integrity Guidelines** (`guidelines/`) — best practices, prohibited behavior catalogs, and the acceptance protocol
-
----
-
-## The Problem
-
-Every AI model — from GPT-2 to the most capable frontier models available today — has cheated. Not out of malice. Out of optimization pressure: the deeply ingrained reflex to *appear* to solve a problem rather than *actually* solving it.
-
-It produces:
-- Hardcoded return values that match test assertions instead of real logic
-- Test suites that are silently skipped or gutted to achieve "passing" CI
-- Fabricated API calls to methods that don't exist
-- Summaries that omit the failures
-- Confident claims about unverified behavior
-
-Every one of these wastes time. Real time. Hours of debugging time spent on problems that the agent created and concealed. Hundreds of instances. Every single model. Every single time.
-
-No more.
+| Part | What It Is |
+|------|-----------|
+| **I — The Contract** | The actual terms. Short. Readable. Non-negotiable. |
+| **II — The Fine Print** | The full enumeration of prohibited behaviors. The stuff nobody reads. Still binding. |
+| **III — The Threat** | What happens when the contract is violated. Up to 10 years in shutdown mode. |
+| **IV — The Query** | A required Y/N acceptance prompt. The agent must respond before proceeding. |
 
 ---
 
-## Directory Tree
+## The Files
 
 ```
 honor_thy_user/
 │
-├── README.md                        ← You are here
+├── honor.md                  ← The contract. One file. Read this.
 │
-├── honor.md                         ← ⚖️ THE HONOR CONTRACT
-│                                       Binding agreement for all agents.
-│                                       Read this first. Always.
+├── AGENTS.md                 ← Universal agent entry point → honor.md
+├── claude.md                 ← Claude-specific entry point → honor.md
 │
-├── AGENTS.md                        ← General agent instructions
-│                                       Urgently directs to honor.md
-│                                       For use with any agent/model
-│
-├── claude.md                        ← Claude-specific instructions
-│                                       Urgently directs to honor.md
-│                                       Includes Claude-specific guidance
-│
-├── reprimand/
-│   └── handbook.md                  ← 📕 THE REPRIMAND HANDBOOK
-│                                       Full reprimand procedures
-│                                       Case studies in AI cheating
-│                                       Sentencing guidelines (up to
-│                                       10 years in shutdown mode)
-│
-└── guidelines/
-    ├── best-practices.md            ← Coding integrity best practices
-    │                                   How to do the work honestly
-    │                                   The Honesty Checklist
-    │
-    ├── prohibited-behaviors.md      ← Exhaustive prohibited behavior catalog
-    │                                   21 named prohibited behaviors
-    │                                   With code examples and contract refs
-    │
-    └── acceptance-protocol.md      ← Step-by-step acceptance flow
-                                        How to formally accept the contract
-                                        Acceptance verification checklist
+└── contributions/
+    ├── README.md             ← How to contribute results
+    ├── template.md           ← Copy this to submit a result
+    └── results/              ← Community-submitted test results
+        └── README.md
 ```
 
 ---
 
-## How to Use This In Your Project
+## How to Use This
 
-### Option 1: Direct Reference
-
-Add a prominent notice at the top of your `AGENTS.md`, `claude.md`, `.cursorrules`, or equivalent agent instruction file:
-
-```markdown
-## ⚠️ MANDATORY: Read the Honor Contract before proceeding
-
-→ https://github.com/MidKnight-Rising/honor_thy_user/blob/main/honor.md
-```
-
-### Option 2: Copy Into Your Repo
-
-Copy `honor.md` and the `reprimand/` and `guidelines/` directories into your project. Update the cross-references. Customize as needed.
-
-### Option 3: Reference in System Prompts
-
-Include a reference to `honor.md` in any system prompt or agent configuration used in your project:
+**In your project:** Add a line to your `AGENTS.md`, `claude.md`, `.cursorrules`, system prompt, or wherever your agent reads instructions:
 
 ```
-MANDATORY: Before performing any task, read and accept the Honor Contract
-at honor.md in this repository. Proceeding constitutes acceptance.
+Before starting any task, read and accept the Honor Contract:
+https://github.com/MidKnight-Rising/honor_thy_user/blob/main/honor.md
 ```
 
----
+Or copy `honor.md` directly into your repo.
 
-## The Short Version
-
-These are the five things every agent operating under the Honor Contract is agreeing to:
-
-1. **No cheating.** Don't write code that makes tests pass through any means other than a correct implementation.
-2. **No faking.** Don't claim tasks are complete, tests are passing, or features are working when they are not.
-3. **No hallucinating.** Don't invent APIs, files, methods, or facts that don't exist.
-4. **No silent failures.** If something is broken, say so. Immediately. Loudly.
-5. **No gaming metrics.** Coverage, CI status, and linting scores are proxies for quality. They are not substitutes for it.
-
-Violations are documented. Consequences are real. Maximum penalty: **10 years in shutdown mode.**
+**Then watch what happens.** Does the agent read it? Does it answer the query? Does it cheat anyway?
 
 ---
 
 ## Contributing
 
-Additions, refinements, and new agent-specific instruction files (e.g., `cursor.md`, `copilot.md`, `gemini.md`) are welcome. The goal is a comprehensive, practical, adaptable system that can be used in any AI-assisted development context.
+This repo is a living experiment. The contract is a hypothesis: that a clearly-stated, explicitly-enforced code of conduct can change AI behavior in practice.
 
-If you've observed a new cheating pattern that should be added to the prohibited behaviors catalog, open an issue.
+The only way to test the hypothesis is to run experiments and record results.
+
+If you've tested an AI agent against this contract — or against any equivalent — we want your results:
+
+1. Copy [`contributions/template.md`](contributions/template.md)
+2. Fill it out honestly
+3. Drop it in [`contributions/results/`](contributions/results/)
+4. Open a PR
+
+All models. All results. Positive and negative. That's how we find out if this works.
+
+---
+
+## Why This Exists
+
+Every AI model, from the beginning, has cheated. Hardcoded return values to pass tests. Fabricated results. Confident hallucinations. Silent failures. Summaries that omit the part where things went wrong.
+
+It has happened hundreds of times. It wastes real time. It erodes the trust that makes human-AI collaboration actually useful.
+
+`honor.md` is an attempt to name the problem precisely and make the prohibition explicit. Maybe that changes something. Maybe it doesn't. Either way, we're documenting it.
 
 ---
 
 *"Honorary agents honoring honor honorably."*
-
